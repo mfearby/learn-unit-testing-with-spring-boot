@@ -31,22 +31,4 @@ public class SomeBusinessTest {
         assertEquals(expectedResult, actualResult);
     }
 
-    @Test
-    public void calculateSum_usingStubbedService() {
-
-        SomeDataService someDataService = new SomeDataService() {
-            @Override
-            public int[] retrieveAllData() {
-                return new int[] { 1, 2, 3 };
-            }
-        };
-
-        SomeBusinessImpl business = new SomeBusinessImpl();
-        business.setSomeDataService(someDataService);
-
-        int actualResult = business.calculateSumUsingDataService();
-        int expectedResult = 6;
-        assertEquals(expectedResult, actualResult);
-    }
-
 }
